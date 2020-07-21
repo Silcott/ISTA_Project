@@ -1,0 +1,25 @@
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\bin\Debug\Dashboard.exe
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\bin\Debug\Dashboard.pdb
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.BeautyForm.resources
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.Form1.resources
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.Properties.Resources.resources
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.GenerateResource.Cache
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.exe
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.Card.resources
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.Menu.resources
+c:\users\user\documents\visual studio 2015\Projects\Dashboard\Dashboard\obj\Debug\Dashboard.csprojResolveAssemblyReference.cache
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\bin\Debug\Dashboard.exe.config
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\bin\Debug\Dashboard.exe
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\bin\Debug\Dashboard.pdb
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.csprojAssemblyReference.cache
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.BeautyForm.resources
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.Card.resources
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.Form1.resources
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.Menu.resources
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.Properties.Resources.resources
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.GenerateResource.cache
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.csproj.CoreCompileInputs.cache
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.exe
+C:\Users\silco\quantico06\Project\Project\copy_archive\4. DashboardUI-master\DashboadUI\Dashboard\Dashboard\obj\Debug\Dashboard.pdb

@@ -55,3 +55,16 @@
 ### DELETE
 - 				//Create a string variable to hold the sql query to delet data
                 String sql = "Delete FROM tbl_users WHERE user_id=user_id";
+				
+##### Then, I added the tables into Microsoft SQL Server
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/SQL_Server-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
+##### I used two tables one named tbl_users, which is for the ticket managers/admin and the other named tbl_requesters, which are customers or help desk employees that input the tickets
+### USERS TABLE 
+- tbl_users
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/tbl_users-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
+
+
+### REQUESTER TABLE
+- tbl_requesters
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/tbl_requestors-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
+

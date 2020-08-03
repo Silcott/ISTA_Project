@@ -1,12 +1,18 @@
-<p align="center">WELCOME TO MY PROJECT</p>
-<p align="center">FOR</p>
-<p align="center">MICROSOFT SOFTWARE</p>
-<p align="center">&</p>
-<p align="center">SYSTEMS ACADEMY</p>
-	
-<p align="center">My Project is a Ticket Management Application</p>
+<p align="center">
 
-<img align="center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg"> 
+# WELCOME TO MY PROJECT 
+
+# FOR 
+
+# MICROSOFT SOFTWARE 
+
+# & 
+
+# SYSTEMS ACADEMY
+
+## My Project is a Ticket Management Application
+
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
 ## Most Recent Markdown Deliverable
 - [Click HERE to see my most recent markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable03.md)
@@ -23,3 +29,4 @@
 ## SQL Database Scripting
 - [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
 
+</p>

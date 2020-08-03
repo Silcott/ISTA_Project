@@ -1,3 +1,6 @@
+# Initial Slide Deck - 15 July 2020
+# By James Silcott
+
 <img align="left" height="1200px" width="800px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Slide_Decks/Initial_Conception/Slide1-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px">  
 <img align="left" height="1200px" width="800px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Slide_Decks/Initial_Conception/Slide2-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px">  
 <img align="left" height="1200px" width="800px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Slide_Decks/Initial_Conception/Slide3-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px">  

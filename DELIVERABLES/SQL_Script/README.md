@@ -5,7 +5,7 @@
 
 # Ticket Recording Application – "Trackin!T".
 
-<img align="Center" height="300px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/ManageUsersDash-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
+<img align="Center" height="275px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/ManageUsersDash-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
 <br> Picture of the Manage User Dashboard
 
 ##  SQL Script

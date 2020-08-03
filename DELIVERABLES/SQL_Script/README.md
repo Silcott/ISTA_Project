@@ -1,11 +1,11 @@
 # SQL Database Scripting
 [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
 
-<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/ManageUsersDash-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
 # Ticket Recording Application – "Trackin!T".
 
-<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Dashboard.svg" alt="html" style="vertical-align:top; margin:4px"> 
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/ManageUsersDash-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
 ##  SQL Script
 #### This is the code I wrote from the application to query results from SQL:

@@ -3,7 +3,7 @@
 
 # Ticket Recording Application – "Trackin!T".
 
-<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/ISTA_Project_ERD-Silcott-30JUL2020-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
+<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/ISTA_Project_ERD-Silcott-30JUL2020-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
 ## (ERDs) help you understand relationships between entities within a system, such as customers, products, or order IDs.
 

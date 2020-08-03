@@ -1,17 +1,6 @@
-## Name: James Silcott<br><sup>Project Deliverable:<br>02 Date: July 8, 2020</sup>
+## Name: James Silcott<br><sup>Project Deliverable:02 <br>Date: July 8, 2020</sup>
 
-## <div align="center">Help Desk Application
-<style>
-	p 	{        
-		background-color: #F7F8FB;
-        border-left: 2px solid #9CAFD4;
-        margin: 0 24px 0 4px;
-        padding: 0 12px 0 16px;
-		text-indent: 50px;
-		line-height: 26pt
-		}
-	
-</style>
+## <div align="center"> Help Desk Application
 
 <p>Greetings, my name is James Silcott and I am working on a project for the 
 Microsoft Cloud Application Development course.  The project I have chosen 

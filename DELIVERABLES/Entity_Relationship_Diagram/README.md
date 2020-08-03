@@ -2,6 +2,7 @@
 <img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
 # Ticket Recording Application – "Trackin!T".
+[Check out my ERD here!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
 
 <img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/ERD/ISTA_Project_ERD-Silcott-30JUL2020-stroke-and-fill.svg" alt="html" style="vertical-align:top; margin:4px"> 
 

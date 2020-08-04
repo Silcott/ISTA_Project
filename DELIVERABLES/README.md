@@ -34,7 +34,7 @@
 # PART III: SOFTWARE DEVELOPMENT PROCESS
 
 ## Chapter 7: SQL Database Scripting
-- [x] [Click HERE to see my how I wrote the SQL script!](htthttps://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SQL_Script/README.md)
+- [x] [Click HERE to see my how I wrote the SQL script!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SQL_Script/README.md)
 - [x] [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
 
 ## Chapter 8: Requirements Analysis and Specification

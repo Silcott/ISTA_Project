@@ -1,79 +1,79 @@
 <p align="center">
 
-# This is my Quantico Project: Ticket Management Application
+# <div align="center"> This is my Quantico Project: Ticket Management Application
 
 <img align="Center" height="275px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
-# Outline & Tasks
+# <div align="center"> Outline & Tasks
 
-# PART I: PROJECT SELECTION
+# <div align="center"> PART I: PROJECT SELECTION
 
-## Chapter 1: Project Inception
-- [x] [Click HERE to see my first markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable01.md)
+## <div align="center"> Chapter 1: Project Inception
+- [x] <div align="center"> [Click HERE to see my first markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable01.md)
 
-## My Initial Slide Deck
-- [x] [Click HERE to see first idea for this project!](https://github.com/Silcott/ISTA_Project/tree/master/DELIVERABLES/ISTA_Project_Slide_Decks/Initial_Slides)
+## <div align="center"> My Initial Slide Deck
+- [x] <div align="center"> [Click HERE to see first idea for this project!](https://github.com/Silcott/ISTA_Project/tree/master/DELIVERABLES/ISTA_Project_Slide_Decks/Initial_Slides)
 
-## Chapter 2: Project Selection
-- [x] [Click HERE to see my second markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable02.md)
+## <div align="center"> Chapter 2: Project Selection
+- [x] <div align="center"> [Click HERE to see my second markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable02.md)
 
-## Chapter 3: Project Presentation I
-- [x] [Click HERE to see my most recent markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable03.md)
+## <div align="center"> Chapter 3: Project Presentation I
+- [x] <div align="center"> [Click HERE to see my most recent markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable03.md)
 
-# PART II: DATABASE DEVELOPMENT
+# <div align="center"> PART II: DATABASE DEVELOPMENT
 
-## Chapter 4: (ERD) Entity Relationship Diagram
-- [x] [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
+## <div align="center"> Chapter 4: (ERD) Entity Relationship Diagram
+- [x] <div align="center"> [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
 
-## Chapter 5: (UML) Unified Modeling Language | Activity Diagram
-- [x] [Click HERE to see my Activity Diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ISTA_Project_Activity_Diagram-Silcott-30JUL2020.pdf)
+## <div align="center"> Chapter 5: (UML) Unified Modeling Language | Activity Diagram
+- [x] <div align="center"> [Click HERE to see my Activity Diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ISTA_Project_Activity_Diagram-Silcott-30JUL2020.pdf)
 
-## Chapter 6: (ERD) Entity Relationship Diagram "Used the same from Chapter 4...it was that good"
-- [x] [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
+## <div align="center"> Chapter 6: (ERD) Entity Relationship Diagram "Used the same from Chapter 4...it was that good"
+- [x] <div align="center"> [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
 
-# PART III: SOFTWARE DEVELOPMENT PROCESS
+# <div align="center"> PART III: SOFTWARE DEVELOPMENT PROCESS
 
-## Chapter 7: SQL Database Scripting
-- [x] [Click HERE to see my how I wrote the SQL script!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SQL_Script/README.md)
-- [x] [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
+## <div align="center"> Chapter 7: SQL Database Scripting
+- [x] <div align="center"> [Click HERE to see my how I wrote the SQL script!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SQL_Script/README.md)
+- [x] <div align="center"> [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
 
-## Chapter 8: Requirements Analysis and Specification
-- [ ] *Working:* Software Development Cycle & Object Oriented Development Principles
+## <div align="center"> Chapter 8: Requirements Analysis and Specification
+- [ ] <div align="center"> *Working:* Software Development Cycle & Object Oriented Development Principles
 
-## Chapter 9: Application Design
-- [ ] *Working:* Requirements Phase & Requirements Gathering
+## <div align="center"> Chapter 9: Application Design
+- [ ] <div align="center"> *Working:* Requirements Phase & Requirements Gathering
 
-## Chapter 10: Implementation and Testing
-- [ ] *Working:* Requirements Analysis & Software Requirements Specification (SRS)
+## <div align="center"> Chapter 10: Implementation and Testing
+- [ ] <div align="center"> *Working:* Requirements Analysis & Software Requirements Specification (SRS)
 
-## Chapter 11: Project Presentation III
-- [ ] *Working:* Program Design, Project design & Discussion Topics
+## <div align="center"> Chapter 11: Project Presentation III
+- [ ] <div align="center"> *Working:* Program Design, Project design & Discussion Topics
 
-# PART III: APPLICATION DEVELOPMENT
+# <div align="center"> PART III: APPLICATION DEVELOPMENT
 
-## Chapter 12: Iteration 1 RAD, Single Responsibility
-- [ ] *Working:* Program Implementation
+## <div align="center"> Chapter 12: Iteration 1 RAD, Single Responsibility
+- [ ] <div align="center"> *Working:* Program Implementation
 
-## Chapter 13: Iteration 1 Implementation and Testing, Open-Closed
-- [ ] *Working:* Testing, Principles of Testing, Test Driven Development
+## <div align="center"> Chapter 13: Iteration 1 Implementation and Testing, Open-Closed
+- [ ] <div align="center"> *Working:* Testing, Principles of Testing, Test Driven Development
 
-## Chapter 14: Iteration 2 RAD, Liskov Substitution
-- [ ] *Working:* User Interface Design Process & User Interface Design Activities & Prototype
+## <div align="center"> Chapter 14: Iteration 2 RAD, Liskov Substitution
+- [ ] <div align="center"> *Working:* User Interface Design Process & User Interface Design Activities & Prototype
 
-## Chapter 15: Iteration 2 Implementation and Testing, Interface Segregation
-- [ ] *Working:* User Interface Design Process & Wireframe
-
-
-## Chapter 16: Iteration 3 RAD, Dependency Inversion
-- [ ] *Working:* User Interface Design Activities & Prototype
+## <div align="center"> Chapter 15: Iteration 2 Implementation and Testing, Interface Segregation
+- [ ] <div align="center"> *Working:* User Interface Design Process & Wireframe
 
 
-## Chapter 17: Iteration 3 Implementation and Testing, Code Security
-- [ ] *Working:* Interface elements & User Interface Design Principles & Mockup
+## <div align="center"> Chapter 16: Iteration 3 RAD, Dependency Inversion
+- [ ] <div align="center"> *Working:* User Interface Design Activities & Prototype
 
-# PART III: APPLICATION DEVELOPMENT
 
-## Chapter 18: Final Presentation
-- [ ] *Working:* Implementation Introduction
+## <div align="center"> Chapter 17: Iteration 3 Implementation and Testing, Code Security
+- [ ] <div align="center"> *Working:* Interface elements & User Interface Design Principles & Mockup
+
+# <div align="center"> PART III: APPLICATION DEVELOPMENT
+
+## <div align="center"> Chapter 18: Final Presentation
+- [ ] <div align="center"> *Working:* Implementation Introduction
 
 </p>

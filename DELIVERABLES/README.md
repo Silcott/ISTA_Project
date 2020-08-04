@@ -2,7 +2,7 @@
 
 # <div align="center"> This is my Quantico Project: Ticket Management Application
 
-<img align="Center" height="275px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
+<div align="center"><img align="Center" height="275px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
 # <div align="center"> Outline & Tasks
 

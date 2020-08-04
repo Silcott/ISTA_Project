@@ -1,20 +1,12 @@
 <p align="center">
 
-# WELCOME TO MY PROJECT 
-
-# FOR 
-
-# MICROSOFT SOFTWARE 
-
-# & 
-
-# SYSTEMS ACADEMY
+# WELCOME TO MY PROJECT FOR MICROSOFT SOFTWARE & SYSTEMS ACADEMY
 
 ## This is my Quantico Project: Ticket Management Application
 
-## Outline & Tasks
+<img align="Center" height="275px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
-<img align="Center" height="480px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
+# Outline & Tasks
 
 # PART I: PROJECT SELECTION
 
@@ -47,41 +39,42 @@
 - [x] [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
 
 ## Chapter 8: Requirements Analysis and Specification
-- [ ] *Working* Software Development Cycle & Object Oriented Development Principles
+- [ ] *Working:* Software Development Cycle & Object Oriented Development Principles
 
 ## Chapter 9: Application Design
-- [ ] *Working* Requirements Phase & Requirements Gathering
+- [ ] *Working:* Requirements Phase & Requirements Gathering
 
 ## Chapter 10: Implementation and Testing
-- [ ] *Working* Requirements Analysis & Software Requirements Specification (SRS)
+- [ ] *Working:* Requirements Analysis & Software Requirements Specification (SRS)
 
 ## Chapter 11: Project Presentation III
-- [ ] *Working* Program Design, Project design & Discussion Topics
+- [ ] *Working:* Program Design, Project design & Discussion Topics
 
 # PART III: APPLICATION DEVELOPMENT
 
 ## Chapter 12: Iteration 1 RAD, Single Responsibility
-- [ ] *Working* Program Implementation
+- [ ] *Working:* Program Implementation
 
 ## Chapter 13: Iteration 1 Implementation and Testing, Open-Closed
-- [ ] *Working* Testing, Principles of Testing, Test Driven Development
+- [ ] *Working:* Testing, Principles of Testing, Test Driven Development
 
 ## Chapter 14: Iteration 2 RAD, Liskov Substitution
-- [ ] *Working* User Interface Design Process & User Interface Design Activities & Prototype
+- [ ] *Working:* User Interface Design Process & User Interface Design Activities & Prototype
 
 ## Chapter 15: Iteration 2 Implementation and Testing, Interface Segregation
-- [ ] *Working* User Interface Design Process & Wireframe
+- [ ] *Working:* User Interface Design Process & Wireframe
 
 
 ## Chapter 16: Iteration 3 RAD, Dependency Inversion
-- [ ] *Working* User Interface Design Activities & Prototype
+- [ ] *Working:* User Interface Design Activities & Prototype
 
 
 ## Chapter 17: Iteration 3 Implementation and Testing, Code Security
-- [ ] *Working* Interface elements & User Interface Design Principles & Mockup
+- [ ] *Working:* Interface elements & User Interface Design Principles & Mockup
 
 # PART III: APPLICATION DEVELOPMENT
 
 ## Chapter 18: Final Presentation
-- [ ] *Working* Implementation Introduction
+- [ ] *Working:* Implementation Introduction
 
+</p>

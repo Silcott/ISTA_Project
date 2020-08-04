@@ -9,7 +9,9 @@
 # <div align="center"> PART I: PROJECT SELECTION
 
 ## <div align="center"> Chapter 1: Project Inception
-<div align="center"> - [x] <div align="center"> [Click HERE to see my first markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable01.md)
+<div align="center" - [x]>
+
+- [x] <div align="center"> [Click HERE to see my first markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable01.md)
 
 ## <div align="center"> My Initial Slide Deck
 - [x] <div align="center"> [Click HERE to see first idea for this project!](https://github.com/Silcott/ISTA_Project/tree/master/DELIVERABLES/ISTA_Project_Slide_Decks/Initial_Slides)

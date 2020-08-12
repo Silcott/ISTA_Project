@@ -6,12 +6,17 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TrackITManagementSystem")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("" +
+    "This program is for development teams, customer service departments, " +
+    "delivery notification systems, or Field Fore Automation companies to " +
+    "create tickets and as they close those items they can mark them open, " +
+    "closed, under development and gives a workflow that allows the development " +
+    "manager to see the process for the overall project")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("SilcottSolutionsInc")]
 [assembly: AssemblyProduct("TrackITManagementSystem")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("SilcottSolutions™")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible

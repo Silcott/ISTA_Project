@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,7 @@ namespace TrackITManagementSystem.UI
         userBLL u = new userBLL();
         userDAL dal = new userDAL();
 
-        string imageName = "no-image.jpg";
+        string imageName = "no-image.png";
 
         private void lblPhone_Click(object sender, EventArgs e)
         {
@@ -82,6 +83,12 @@ namespace TrackITManagementSystem.UI
             txtPassword.Text = "";
             txtAddress.Text = "";
             txtUserID.Text = "";
+            //Path to Destination Folder for no image
+            //Get the path of the image
+            string paths = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+            string imagePath = paths + "\\images\\no-image.png";
+            //Display in Picture Box
+            pictureBoxProfilePicture.Image = new Bitmap(imagePath);
         }
 
         private void dvgUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -95,7 +102,26 @@ namespace TrackITManagementSystem.UI
             txtFullName.Text = dvgUsers.Rows[RowIndex].Cells[4].Value.ToString();
             txtPhone.Text = dvgUsers.Rows[RowIndex].Cells[5].Value.ToString();
             txtAddress.Text = dvgUsers.Rows[RowIndex].Cells[6].Value.ToString();
-            imageName = dvgUsers.Rows[RowIndex].Cells[7].Value.ToString();
+            imageName = dvgUsers.Rows[RowIndex].Cells[8].Value.ToString();
+
+            //Display the Image of the selected User
+            //Get the path of the image
+            string paths = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
+
+            if (imageName != "no-image.png")
+            {
+                //Path to Destination Folder, if there is a selected image
+                string imagePath = paths + "\\images\\" + imageName;
+                //Display in Picture Box
+                pictureBoxProfilePicture.Image = new Bitmap(imagePath);
+            }
+            else
+            {
+                //Path to Destination Folder for no image
+                string imagePath = paths + "\\images\\no-image.png";
+                //Display in Picture Box
+                pictureBoxProfilePicture.Image = new Bitmap(imagePath);
+            }
         }
 
         private void frmUsers_Load(object sender, EventArgs e)
@@ -166,5 +192,83 @@ namespace TrackITManagementSystem.UI
             //Call the user function
             Clear();
         }
+
+
+
+        private void btnSelectImage_Click_1(object sender, EventArgs e)
+        {
+            //Write the code to upload image of user
+            //Open Dialog Box to select image
+            OpenFileDialog open = new OpenFileDialog();
+
+            //Filter the file type to only allow image file types
+            open.Filter = "Image Files *.jpeg; *.jpg; *.png; *.PNG; *.gif;)|*.jpeg; *.jpg; *.png; *.PNG; *.gif;";
+
+            //Check if the file is selected or not
+            if(open.ShowDialog() == DialogResult.OK)
+            {
+                //Check if the file exists or not
+                if (open.CheckFileExists)
+                {
+                    //Display the selected file on Picture Box
+                    pictureBoxProfilePicture.Image = new Bitmap(open.FileName);
+
+                    //Rename the Image we select
+                    //1. Get the extension of image
+                    string ext = Path.GetExtension(open.FileName);
+
+                    //2. Generate Random Integer
+                    Random random = new Random();
+                    int RandInt = random.Next(0, 1000);
+
+                    //3. Rename the image, this renames it to the current datetime plus a random numbner between 0-1000 and adds the extension
+                    imageName = DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss") + RandInt + ext;
+
+                    //4. Set the path for the selected images
+                    string sourcePath = open.FileName;
+
+                    //5. Get the the path of destination
+                    string paths = Application.StartupPath.Substring(0, Application.StartupPath.Length - 10);
+                    //Paths to destination folder
+                    string destionationPath = paths + "\\images\\" + imageName;
+
+                    //6. Copy image to the destionation folder
+                    File.Copy(sourcePath, destionationPath);
+
+                    //7. Display Message
+                    MessageBox.Show("Image Successfully Uploaded.");
+
+                }
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            //Write the code to get users based on keywords
+            //1. Get teh keywords form the TextBox
+            String keywords = txtSearch.Text;
+
+            //Check whether the textbox is empty ot not
+            if (keywords != null)
+            {
+                //TextBox is not empty, display users on Data Grid View based on the ketywords
+                DataTable dt = dal.Search(keywords);
+                dvgUsers.DataSource = dt;
+
+            }
+            else
+            {
+                //TextBox is empty and display all the users on the Data Grid View
+                DataTable dt = dal.Select();
+                dvgUsers.DataSource = dt;
+            }
+        }
+
+        private void dvgUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
     }
 }

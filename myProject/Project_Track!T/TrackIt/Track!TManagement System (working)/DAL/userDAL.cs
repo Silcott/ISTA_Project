@@ -205,7 +205,7 @@ namespace TrackITManagementSystem.DAL
 
             try
             {
-                //Create a string variable to hold the sql query to delet data
+                //Create a string variable to hold the sql query to delete data
                 String sql = "Delete FROM tbl_users WHERE user_id=user_id";
 
                 //Create Sql Command to Execute the Query
@@ -250,5 +250,47 @@ namespace TrackITManagementSystem.DAL
             return isSuccess;
         }
         #endregion
+
+        #region SEARCH
+        public DataTable Search(string keywords)
+        {
+            //1. Create an SQL Connection to connect database
+            SqlConnection conn = new SqlConnection(myconnstring);
+
+            //2. Create Data Table to hold the data from the database temporarily
+            DataTable dt = new DataTable();
+
+            //Write code to search users
+            try
+            {
+                //Write the SQL Query to serach the user from Database
+                String sql = "SELECT * FROM tbl_users WHERE user_id LIKE '%" + keywords + "%' OR full_name LIKE '%" + keywords + "%' OR address LIKE '%" + keywords + "%'";
+
+                //Create SQL Command to Execute the Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Create SQL Data Adapter to gett he data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open Database Connection
+                conn.Open();
+                //Pass the data from adapter to datatable
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+                //Display Error Message if any exceptional errors
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //Close the Database Connect
+                conn.Close();
+            }
+            return dt;
+        }
+        #endregion
+
     }
 }

@@ -77,5 +77,27 @@ namespace TrackITManagementSystem
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFormTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTicketTodayCount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ticketsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Open Create Ticket Form
+            frmRequesters ticket = new frmRequesters();
+            ticket.Show();
+        }
     }
 }

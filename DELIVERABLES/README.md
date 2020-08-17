@@ -30,7 +30,7 @@
 ## <div align="center"> Chapter 5: (UML) Unified Modeling Language | Activity Diagram
 - [x] <div align="center"> [Click HERE to see my Activity Diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ISTA_Project_Activity_Diagram-Silcott-30JUL2020.pdf)
 
-## <div align="center"> Chapter 6: (ERD) Entity Relationship Diagram "Used the same from Chapter 4...it was that good"
+## <div align="center"> Chapter 6: (ERD) Entity Relationship Diagram 
 - [x] <div align="center"> [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
 
 # <div align="center"> PART III: SOFTWARE DEVELOPMENT PROCESS
@@ -38,6 +38,8 @@
 ## <div align="center"> Chapter 7: SQL Database Scripting
 - [x] <div align="center"> [Click HERE to see my how I wrote the SQL script!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SQL_Script/README.md)
 - [x] <div align="center"> [Click HERE to see my Code for this script!](https://github.com/Silcott/ISTA_Project/blob/master/myProject/Project_Track!T/TrackIt/Track!TManagement%20System%20(working)/DAL/userDAL.cs)
+- [x] <div align="center"> [Click HERE to see the Use Case!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/UseCase/README.md)
+- [x] <div align="center"> [Click HERE to see my an updated activity diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ActivityDiagramStep7.svg)
 
 ## <div align="center"> Chapter 8: Requirements Analysis and Specification
 - [ ] <div align="center"> *Working:* Software Development Cycle & Object Oriented Development Principles

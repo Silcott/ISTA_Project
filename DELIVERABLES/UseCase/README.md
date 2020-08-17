@@ -32,13 +32,13 @@ User/Customer will be notified by Help Desk Operator/Technician changes and resp
 
 ##### Alternate Flow
 ### A. The User/Customer doesn't fill the correct or more information is required 
- 	- 1. If the form fields don't have the correct characters it will notify the user/customer to input correct format.
- 	- 2. The use case will return to step 4
+		1. If the form fields don't have the correct characters it will notify the user/customer to input correct format.
+		2. The use case will return to step 4
  
 ### B. The Help Desk Operator/Technician requires more information to help solve the problem. 
- 	- 1. If the help desk operator/technician requires will change the status from new or open to pending and email the user/customer to update the required info.
- 	- 2. The use case will return to step 4
+		1. If the help desk operator/technician requires will change the status from new or open to pending and email the user/customer to update the required info.
+		2. The use case will return to step 4
  
 ### C. The User/Customer changes the status of an existing ticket to resolved because they either changed their mind or the problem was corrected already
- 	- 1. This will trigger a response to the help desk operator/technician and the status will be changed to closed
- 	- 2. The use case will return to step 12
+		1. This will trigger a response to the help desk operator/technician and the status will be changed to closed
+		2. The use case will return to step 12

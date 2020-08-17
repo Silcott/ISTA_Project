@@ -1,8 +1,7 @@
 # Project Step 7
 ### James Silcott
 ### 16 August 2020
-
-## USE CASE: Help Desk Application
+### USE CASE: Help Desk Application
 ---
 ### Actors
 		User/Customer

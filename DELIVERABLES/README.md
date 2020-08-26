@@ -1,37 +1,37 @@
 <p align="center">
 
-# <div align="center"> This is my Quantico Project: Ticket Management Application
+# <div align="center"> This is my Quantico 6 Project: Ticket Management Application
 
 <div align="center"><img align="Center" height="275px" width="600px" src="https://raw.githubusercontent.com/Silcott/ISTA_Project/master/myProject/Project_Track!T/Pictures/Cover.svg" alt="html" style="vertical-align:top; margin:4px"> 
 
-# <div align="center"> Outline & Tasks
+# <div align="center"> Software Development Life Cycle
 
 # <div align="center"> PART I: PROJECT SELECTION
 
 ## <div align="center"> Chapter 1: Project Inception
 <div align="center" - [x]>
 
-- [x] <div align="center"> [Click HERE to see my first markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable01.md)
+- [x] <div align="center"> [Click HERE to see my first markdown about the project](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable01.md)
 
 ## <div align="center"> My Initial Slide Deck
-- [x] <div align="center"> [Click HERE to see first idea for this project!](https://github.com/Silcott/ISTA_Project/tree/master/DELIVERABLES/ISTA_Project_Slide_Decks/Initial_Slides)
+- [x] <div align="center"> [Click HERE to see first idea for this project](https://github.com/Silcott/ISTA_Project/tree/master/DELIVERABLES/ISTA_Project_Slide_Decks/Initial_Slides)
 
 ## <div align="center"> Chapter 2: Project Selection
-- [x] <div align="center"> [Click HERE to see my second markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable02.md)
+- [x] <div align="center"> [Click HERE to see my second markdown about the project](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable02.md)
 
 ## <div align="center"> Chapter 3: Project Presentation I
-- [x] <div align="center"> [Click HERE to see my most recent markdown about the project!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable03.md)
+- [x] <div align="center"> [Click HERE to see my most recent markdown about the project](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Markdown_Deliverables/ISTA_Project_Deliverable03.md)
 
 # <div align="center"> PART II: DATABASE DEVELOPMENT
 
 ## <div align="center"> Chapter 4: (ERD) Entity Relationship Diagram
-- [x] <div align="center"> [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
+- [x] <div align="center"> [Click HERE to see my ERD](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
 
 ## <div align="center"> Chapter 5: (UML) Unified Modeling Language | Activity Diagram
-- [x] <div align="center"> [Click HERE to see my Activity Diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ISTA_Project_Activity_Diagram-Silcott-30JUL2020.pdf)
+- [x] <div align="center"> [Click HERE to see my Activity Diagram](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ISTA_Project_Activity_Diagram-Silcott-30JUL2020.pdf)
 
 ## <div align="center"> Chapter 6: (ERD) Entity Relationship Diagram 
-- [x] <div align="center"> [Click HERE to see my ERD!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
+- [x] <div align="center"> [Click HERE to see my ERD](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Entity_Relationship_Diagram/ISTA_Project_ERD-Silcott-30JUL2020.pdf)
 
 # <div align="center"> PART III: SOFTWARE DEVELOPMENT PROCESS
 
@@ -42,7 +42,7 @@
 - [x] <div align="center"> [Click HERE to see my an updated activity diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ActivityDiagramStep7.svg)
 
 ## <div align="center"> Chapter 8: Requirements Analysis and Specification
-- [x] <div align="center"> [Click HERE to see my Software Requirements Specification (SRS)!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SRS/SRS.pdf)
+- [x] <div align="center"> [Click HERE to see my Software Requirements Specification (SRS)](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SRS/SRS.pdf)
 
 ## <div align="center"> Chapter 9: Application Design
 - [ ] <div align="center"> *Working:* Requirements Phase & Requirements Gathering

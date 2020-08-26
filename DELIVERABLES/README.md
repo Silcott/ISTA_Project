@@ -42,7 +42,7 @@
 - [x] <div align="center"> [Click HERE to see my an updated activity diagram!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Activity_Diagram_UML/ActivityDiagramStep7.svg)
 
 ## <div align="center"> Chapter 8: Requirements Analysis and Specification
-- [ ] <div align="center"> *Working:* Software Development Cycle & Object Oriented Development Principles
+- [x] <div align="center"> [Click HERE to see my Software Requirements Specification (SRS)!](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SRS/SRS.pdf)
 
 ## <div align="center"> Chapter 9: Application Design
 - [ ] <div align="center"> *Working:* Requirements Phase & Requirements Gathering

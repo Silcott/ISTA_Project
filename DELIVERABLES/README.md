@@ -43,6 +43,8 @@
 
 ## <div align="center"> Chapter 8: Requirements Analysis and Specification
 - [x] <div align="center"> [Click HERE to see my Software Requirements Specification (SRS)](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/SRS/SRS.pdf)
+- [x] <div align="center"> [Click HERE to see my HTML Form for user and ticket inputs](https://github.com/Silcott/ISTA_Project/blob/master/DELIVERABLES/Website/index.html)
+
 
 ## <div align="center"> Chapter 9: Application Design
 - [ ] <div align="center"> *Working:* Requirements Phase & Requirements Gathering

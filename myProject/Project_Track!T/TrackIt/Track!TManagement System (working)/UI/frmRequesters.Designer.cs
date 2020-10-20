@@ -58,7 +58,7 @@
             this.txtTicketID = new System.Windows.Forms.TextBox();
             this.lblTicketID = new System.Windows.Forms.Label();
             this.btnUploadFile = new System.Windows.Forms.Button();
-            this.pictureBoxProfilePicture = new System.Windows.Forms.PictureBox();
+            this.txtFileNamePath = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dvgUsers = new System.Windows.Forms.DataGridView();
             this.textIssueDescription = new System.Windows.Forms.TextBox();
@@ -72,8 +72,8 @@
             this.textCost = new System.Windows.Forms.TextBox();
             this.textDateCompleted = new System.Windows.Forms.TextBox();
             this.lblLocation = new System.Windows.Forms.Label();
-            this.listPriorityLevel = new System.Windows.Forms.ListBox();
-            this.checkedListIssueCategory = new System.Windows.Forms.CheckedListBox();
+            this.txtPriorityLevel = new System.Windows.Forms.ListBox();
+            this.txtissuecategory = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFileNamePath)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUsers)).BeginInit();
             this.SuspendLayout();
@@ -130,6 +130,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblFormTitle
             // 
@@ -262,6 +263,7 @@
             this.btnAdd.TabIndex = 46;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // lblDateCreated
             // 
@@ -399,16 +401,16 @@
             this.btnUploadFile.Text = "Upload File";
             this.btnUploadFile.UseVisualStyleBackColor = false;
             // 
-            // pictureBoxProfilePicture
+            // txtFileNamePath
             // 
-            this.pictureBoxProfilePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxProfilePicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxProfilePicture.Location = new System.Drawing.Point(170, 469);
-            this.pictureBoxProfilePicture.Name = "pictureBoxProfilePicture";
-            this.pictureBoxProfilePicture.Size = new System.Drawing.Size(364, 28);
-            this.pictureBoxProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxProfilePicture.TabIndex = 30;
-            this.pictureBoxProfilePicture.TabStop = false;
+            this.txtFileNamePath.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.txtFileNamePath.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.txtFileNamePath.Location = new System.Drawing.Point(170, 469);
+            this.txtFileNamePath.Name = "txtFileNamePath";
+            this.txtFileNamePath.Size = new System.Drawing.Size(364, 28);
+            this.txtFileNamePath.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.txtFileNamePath.TabIndex = 30;
+            this.txtFileNamePath.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -535,27 +537,27 @@
             this.lblLocation.TabIndex = 70;
             this.lblLocation.Text = "Location";
             // 
-            // listPriorityLevel
+            // txtPriorityLevel
             // 
-            this.listPriorityLevel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listPriorityLevel.FormattingEnabled = true;
-            this.listPriorityLevel.ItemHeight = 17;
-            this.listPriorityLevel.Items.AddRange(new object[] {
+            this.txtPriorityLevel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPriorityLevel.FormattingEnabled = true;
+            this.txtPriorityLevel.ItemHeight = 17;
+            this.txtPriorityLevel.Items.AddRange(new object[] {
             "Critical",
             "High",
             "Standard",
             "Scheduled or Low",
             "Project"});
-            this.listPriorityLevel.Location = new System.Drawing.Point(394, 274);
-            this.listPriorityLevel.Name = "listPriorityLevel";
-            this.listPriorityLevel.Size = new System.Drawing.Size(140, 38);
-            this.listPriorityLevel.TabIndex = 71;
+            this.txtPriorityLevel.Location = new System.Drawing.Point(394, 274);
+            this.txtPriorityLevel.Name = "txtPriorityLevel";
+            this.txtPriorityLevel.Size = new System.Drawing.Size(140, 38);
+            this.txtPriorityLevel.TabIndex = 71;
             // 
-            // checkedListIssueCategory
+            // txtissuecategory
             // 
-            this.checkedListIssueCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListIssueCategory.FormattingEnabled = true;
-            this.checkedListIssueCategory.Items.AddRange(new object[] {
+            this.txtissuecategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtissuecategory.FormattingEnabled = true;
+            this.txtissuecategory.Items.AddRange(new object[] {
             "Technical",
             "Billing",
             "Shipping",
@@ -565,11 +567,11 @@
             "Website",
             "Email Issues",
             "Customer Service"});
-            this.checkedListIssueCategory.Location = new System.Drawing.Point(163, 272);
-            this.checkedListIssueCategory.Name = "checkedListIssueCategory";
-            this.checkedListIssueCategory.Size = new System.Drawing.Size(153, 44);
-            this.checkedListIssueCategory.TabIndex = 72;
-            this.checkedListIssueCategory.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.txtissuecategory.Location = new System.Drawing.Point(163, 272);
+            this.txtissuecategory.Name = "txtissuecategory";
+            this.txtissuecategory.Size = new System.Drawing.Size(153, 44);
+            this.txtissuecategory.TabIndex = 72;
+            this.txtissuecategory.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -591,8 +593,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1135, 610);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkedListIssueCategory);
-            this.Controls.Add(this.listPriorityLevel);
+            this.Controls.Add(this.txtissuecategory);
+            this.Controls.Add(this.txtPriorityLevel);
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.textDateCompleted);
             this.Controls.Add(this.textCost);
@@ -626,7 +628,7 @@
             this.Controls.Add(this.txtTicketID);
             this.Controls.Add(this.lblTicketID);
             this.Controls.Add(this.btnUploadFile);
-            this.Controls.Add(this.pictureBoxProfilePicture);
+            this.Controls.Add(this.txtFileNamePath);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.dvgUsers);
             this.Controls.Add(this.panelTop);
@@ -643,7 +645,7 @@
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfilePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFileNamePath)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUsers)).EndInit();
             this.ResumeLayout(false);
@@ -682,7 +684,7 @@
         private System.Windows.Forms.TextBox txtTicketID;
         private System.Windows.Forms.Label lblTicketID;
         private System.Windows.Forms.Button btnUploadFile;
-        private System.Windows.Forms.PictureBox pictureBoxProfilePicture;
+        private System.Windows.Forms.PictureBox txtFileNamePath;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridView dvgUsers;
         private System.Windows.Forms.TextBox textIssueDescription;
@@ -696,8 +698,8 @@
         private System.Windows.Forms.TextBox textCost;
         private System.Windows.Forms.TextBox textDateCompleted;
         private System.Windows.Forms.Label lblLocation;
-        private System.Windows.Forms.ListBox listPriorityLevel;
-        private System.Windows.Forms.CheckedListBox checkedListIssueCategory;
+        private System.Windows.Forms.ListBox txtPriorityLevel;
+        private System.Windows.Forms.CheckedListBox txtissuecategory;
         private System.Windows.Forms.Label label1;
     }
 }

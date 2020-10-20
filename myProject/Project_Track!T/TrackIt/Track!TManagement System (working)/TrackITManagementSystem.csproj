@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BLL\requestersBLL.cs" />
     <Compile Include="BLL\userBLL.cs" />
+    <Compile Include="DAL\requesterDAL.cs" />
     <Compile Include="DAL\userDAL.cs" />
     <Compile Include="UI\frmHome.cs">
       <SubType>Form</SubType>

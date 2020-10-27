@@ -28,45 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHome));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStripTop = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFooter = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.lblUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblTicketTotalCount = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.lblTicketTodayCount = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblUserTitle = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblTicketOpenCount = new System.Windows.Forms.Label();
-            this.dgvTickets = new System.Windows.Forms.DataGridView();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.dvgUsers = new System.Windows.Forms.DataGridView();
             this.ticketSearch = new System.Windows.Forms.Label();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lblFormTitle = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.lblTotalTickets = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.myToolTip1 = new TrackITManagementSystem.MyToolTip(this.components);
             this.menuStripTop.SuspendLayout();
             this.panelFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripTop
@@ -82,6 +77,7 @@
             this.menuStripTop.Size = new System.Drawing.Size(1135, 41);
             this.menuStripTop.TabIndex = 0;
             this.menuStripTop.Text = "menuStrip1";
+            this.menuStripTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStripTop_MouseDown);
             // 
             // adminToolStripMenuItem
             // 
@@ -93,215 +89,133 @@
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(99, 21);
-            this.usersToolStripMenuItem.Text = "Mange Users";
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(92, 21);
+            this.usersToolStripMenuItem.Text = "User Profile";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
             // ticketsToolStripMenuItem
             // 
             this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
-            this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(106, 21);
-            this.ticketsToolStripMenuItem.Text = "Create Tickets";
+            this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
+            this.ticketsToolStripMenuItem.Text = "Tickets";
             this.ticketsToolStripMenuItem.Click += new System.EventHandler(this.ticketsToolStripMenuItem_Click);
             // 
             // panelFooter
             // 
             this.panelFooter.BackColor = System.Drawing.SystemColors.Control;
-            this.panelFooter.Controls.Add(this.pictureBox3);
+            this.panelFooter.Controls.Add(this.lblUser);
             this.panelFooter.Controls.Add(this.label1);
+            this.panelFooter.Controls.Add(this.lblUserTitle);
+            this.panelFooter.Controls.Add(this.label7);
+            this.panelFooter.Controls.Add(this.label6);
+            this.panelFooter.Controls.Add(this.pictureBox3);
             this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelFooter.Location = new System.Drawing.Point(0, 546);
             this.panelFooter.Name = "panelFooter";
             this.panelFooter.Size = new System.Drawing.Size(1135, 64);
             this.panelFooter.TabIndex = 1;
             // 
-            // pictureBox3
+            // lblUser
             // 
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(328, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(807, 78);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.lblUser.AutoSize = true;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblUser.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblUser.Location = new System.Drawing.Point(116, 7);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(112, 37);
+            this.lblUser.TabIndex = 61;
+            this.lblUser.Tag = "";
+            this.lblUser.Text = "ADMIN";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
-            this.label1.Location = new System.Drawing.Point(3, 16);
+            this.label1.Font = new System.Drawing.Font("Ebrima", 22F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(901, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(329, 30);
+            this.label1.Size = new System.Drawing.Size(104, 41);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Tracking!T Management System";
+            this.label1.Text = "Ticket";
             // 
-            // panel1
+            // lblUserTitle
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Location = new System.Drawing.Point(344, 65);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 2;
+            this.lblUserTitle.AutoSize = true;
+            this.lblUserTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserTitle.Location = new System.Drawing.Point(3, 15);
+            this.lblUserTitle.Name = "lblUserTitle";
+            this.lblUserTitle.Size = new System.Drawing.Size(110, 21);
+            this.lblUserTitle.TabIndex = 60;
+            this.lblUserTitle.Text = "Current User:";
             // 
-            // label2
+            // label7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
-            this.label2.Location = new System.Drawing.Point(35, -1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total Tickets";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Salmon;
-            this.panel4.Controls.Add(this.lblTicketTotalCount);
-            this.panel4.Location = new System.Drawing.Point(0, 25);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(199, 74);
-            this.panel4.TabIndex = 2;
-            // 
-            // lblTicketTotalCount
-            // 
-            this.lblTicketTotalCount.AutoSize = true;
-            this.lblTicketTotalCount.BackColor = System.Drawing.Color.Salmon;
-            this.lblTicketTotalCount.Font = new System.Drawing.Font("Bahnschrift", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketTotalCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblTicketTotalCount.Location = new System.Drawing.Point(39, -4);
-            this.lblTicketTotalCount.Name = "lblTicketTotalCount";
-            this.lblTicketTotalCount.Size = new System.Drawing.Size(68, 77);
-            this.lblTicketTotalCount.TabIndex = 1;
-            this.lblTicketTotalCount.Text = "0";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(573, 65);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Moccasin;
-            this.panel6.Controls.Add(this.lblTicketTodayCount);
-            this.panel6.Location = new System.Drawing.Point(0, 25);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(199, 74);
-            this.panel6.TabIndex = 3;
-            // 
-            // lblTicketTodayCount
-            // 
-            this.lblTicketTodayCount.AutoSize = true;
-            this.lblTicketTodayCount.BackColor = System.Drawing.Color.Moccasin;
-            this.lblTicketTodayCount.Font = new System.Drawing.Font("Bahnschrift", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketTodayCount.ForeColor = System.Drawing.Color.Goldenrod;
-            this.lblTicketTodayCount.Location = new System.Drawing.Point(32, -4);
-            this.lblTicketTodayCount.Name = "lblTicketTodayCount";
-            this.lblTicketTodayCount.Size = new System.Drawing.Size(68, 77);
-            this.lblTicketTodayCount.TabIndex = 1;
-            this.lblTicketTodayCount.Text = "0";
-            this.lblTicketTodayCount.Click += new System.EventHandler(this.lblTicketTodayCount_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Goldenrod;
-            this.label4.Location = new System.Drawing.Point(14, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Tickets Reported Today";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(804, 65);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 100);
-            this.panel3.TabIndex = 4;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.Font = new System.Drawing.Font("Ebrima", 22F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(76)))), ((int)(((byte)(58)))));
+            this.label7.Location = new System.Drawing.Point(1001, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(123, 41);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Tracker";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.label6.Location = new System.Drawing.Point(36, 0);
+            this.label6.BackColor = System.Drawing.SystemColors.Control;
+            this.label6.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.LightSlateGray;
+            this.label6.Location = new System.Drawing.Point(903, 33);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Open Tickets";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Size = new System.Drawing.Size(219, 30);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Management System";
             // 
-            // lblTicketOpenCount
+            // pictureBox3
             // 
-            this.lblTicketOpenCount.AutoSize = true;
-            this.lblTicketOpenCount.Font = new System.Drawing.Font("Bahnschrift", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTicketOpenCount.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lblTicketOpenCount.Location = new System.Drawing.Point(29, -3);
-            this.lblTicketOpenCount.Name = "lblTicketOpenCount";
-            this.lblTicketOpenCount.Size = new System.Drawing.Size(68, 77);
-            this.lblTicketOpenCount.TabIndex = 1;
-            this.lblTicketOpenCount.Text = "0";
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox3.Location = new System.Drawing.Point(299, 5);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(560, 59);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
             // 
-            // dgvTickets
+            // dvgUsers
             // 
-            this.dgvTickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTickets.Location = new System.Drawing.Point(344, 224);
-            this.dgvTickets.Name = "dgvTickets";
-            this.dgvTickets.Size = new System.Drawing.Size(660, 301);
-            this.dgvTickets.TabIndex = 5;
+            this.dvgUsers.BackgroundColor = System.Drawing.Color.LightSlateGray;
+            this.dvgUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dvgUsers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dvgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgUsers.Location = new System.Drawing.Point(26, 430);
+            this.dvgUsers.Name = "dvgUsers";
+            this.dvgUsers.Size = new System.Drawing.Size(1092, 112);
+            this.dvgUsers.TabIndex = 5;
             // 
             // ticketSearch
             // 
             this.ticketSearch.AutoSize = true;
-            this.ticketSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ticketSearch.Location = new System.Drawing.Point(358, 191);
+            this.ticketSearch.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.ticketSearch.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.ticketSearch.Location = new System.Drawing.Point(21, 402);
             this.ticketSearch.Name = "ticketSearch";
-            this.ticketSearch.Size = new System.Drawing.Size(111, 21);
+            this.ticketSearch.Size = new System.Drawing.Size(106, 25);
             this.ticketSearch.TabIndex = 6;
-            this.ticketSearch.Text = "Ticket Search";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(475, 188);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(529, 29);
-            this.txtSearch.TabIndex = 7;
+            this.ticketSearch.Text = "My Tickets";
             // 
             // pictureBoxClose
             // 
             this.pictureBoxClose.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBoxClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClose.Image")));
-            this.pictureBoxClose.Location = new System.Drawing.Point(1089, 3);
+            this.pictureBoxClose.Location = new System.Drawing.Point(963, 3);
             this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(35, 35);
+            this.pictureBoxClose.Size = new System.Drawing.Size(161, 35);
             this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxClose.TabIndex = 8;
             this.pictureBoxClose.TabStop = false;
             this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Location = new System.Drawing.Point(344, 188);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(132, 29);
-            this.pictureBox4.TabIndex = 28;
-            this.pictureBox4.TabStop = false;
             // 
             // lblFormTitle
             // 
@@ -314,7 +228,6 @@
             this.lblFormTitle.Size = new System.Drawing.Size(109, 42);
             this.lblFormTitle.TabIndex = 29;
             this.lblFormTitle.Text = "DASH";
-            this.lblFormTitle.Click += new System.EventHandler(this.lblFormTitle_Click);
             // 
             // label3
             // 
@@ -328,63 +241,160 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "BOARD";
             // 
-            // panel7
+            // label5
             // 
-            this.panel7.BackColor = System.Drawing.Color.PaleGreen;
-            this.panel7.Controls.Add(this.lblTicketOpenCount);
-            this.panel7.Location = new System.Drawing.Point(804, 93);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(199, 74);
-            this.panel7.TabIndex = 4;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Black", 60F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.SeaShell;
+            this.label5.Location = new System.Drawing.Point(43, 106);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(272, 106);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Total ";
+            // 
+            // chart1
+            // 
+            this.chart1.BackColor = System.Drawing.Color.Transparent;
+            this.chart1.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea9.AxisX.LineColor = System.Drawing.Color.DarkSlateGray;
+            chartArea9.AxisY.LineColor = System.Drawing.Color.DarkSlateGray;
+            chartArea9.BackColor = System.Drawing.Color.Transparent;
+            chartArea9.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            chartArea9.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea9.BorderColor = System.Drawing.Color.Transparent;
+            chartArea9.Name = "ChartArea1";
+            chartArea9.ShadowColor = System.Drawing.Color.Transparent;
+            this.chart1.ChartAreas.Add(chartArea9);
+            legend17.Alignment = System.Drawing.StringAlignment.Center;
+            legend17.BackColor = System.Drawing.Color.Transparent;
+            legend17.Enabled = false;
+            legend17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            legend17.HeaderSeparatorColor = System.Drawing.Color.BlanchedAlmond;
+            legend17.IsTextAutoFit = false;
+            legend17.ItemColumnSeparatorColor = System.Drawing.Color.BlanchedAlmond;
+            legend17.Name = "Legend1";
+            legend17.Title = "Category";
+            legend17.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend17.TitleForeColor = System.Drawing.Color.DarkSlateGray;
+            legend18.BackColor = System.Drawing.Color.Transparent;
+            legend18.Enabled = false;
+            legend18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            legend18.IsTextAutoFit = false;
+            legend18.Name = "Legend2";
+            legend18.Title = "Priority";
+            legend18.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend18.TitleForeColor = System.Drawing.Color.DarkSlateGray;
+            this.chart1.Legends.Add(legend17);
+            this.chart1.Legends.Add(legend18);
+            this.chart1.Location = new System.Drawing.Point(467, 23);
+            this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart1.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Red,
+        System.Drawing.Color.Yellow,
+        System.Drawing.Color.LimeGreen};
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series9.IsValueShownAsLabel = true;
+            series9.IsVisibleInLegend = false;
+            series9.LabelBackColor = System.Drawing.Color.Transparent;
+            series9.LabelForeColor = System.Drawing.Color.GhostWhite;
+            series9.Legend = "Legend1";
+            series9.Name = "Series3";
+            this.chart1.Series.Add(series9);
+            this.chart1.Size = new System.Drawing.Size(668, 404);
+            this.chart1.TabIndex = 36;
+            this.chart1.Text = "chart1";
+            this.chart1.GetToolTipText += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.ToolTipEventArgs>(this.chart1_GetToolTipText);
+            // 
+            // lblTotalTickets
+            // 
+            this.lblTotalTickets.AutoSize = true;
+            this.lblTotalTickets.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalTickets.Font = new System.Drawing.Font("Segoe UI", 140F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTickets.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblTotalTickets.Location = new System.Drawing.Point(335, 75);
+            this.lblTotalTickets.Name = "lblTotalTickets";
+            this.lblTotalTickets.Size = new System.Drawing.Size(212, 248);
+            this.lblTotalTickets.TabIndex = 2;
+            this.lblTotalTickets.Text = "0";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label2.ForeColor = System.Drawing.Color.SeaShell;
+            this.label2.Location = new System.Drawing.Point(653, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(292, 28);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Hover Over to Reveal Values";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Black", 60F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.SeaShell;
+            this.label4.Location = new System.Drawing.Point(43, 200);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(325, 106);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Tickets";
+            // 
+            // myToolTip1
+            // 
+            this.myToolTip1.AutomaticDelay = 0;
+            this.myToolTip1.BackColor = System.Drawing.Color.Transparent;
+            this.myToolTip1.ForeColor = System.Drawing.Color.Transparent;
+            this.myToolTip1.MyCaption = null;
+            this.myToolTip1.OwnerDraw = true;
+            this.myToolTip1.UseAnimation = false;
+            this.myToolTip1.UseFading = false;
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1135, 610);
-            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dvgUsers);
+            this.Controls.Add(this.lblTotalTickets);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblFormTitle);
             this.Controls.Add(this.ticketSearch);
-            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBoxClose);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.dgvTickets);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelFooter);
             this.Controls.Add(this.menuStripTop);
+            this.Controls.Add(this.chart1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStripTop;
+            this.MaximumSize = new System.Drawing.Size(1980, 1280);
+            this.MinimumSize = new System.Drawing.Size(1135, 610);
             this.Name = "frmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";
+            this.Activated += new System.EventHandler(this.frmHome_Activated);
             this.Load += new System.EventHandler(this.frmHome_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmHome_MouseDown);
             this.menuStripTop.ResumeLayout(false);
             this.menuStripTop.PerformLayout();
             this.panelFooter.ResumeLayout(false);
             this.panelFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTickets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,28 +406,24 @@
         private System.Windows.Forms.ToolStripMenuItem usersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.Panel panelFooter;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblTicketTotalCount;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTicketTodayCount;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblTicketOpenCount;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgvTickets;
         private System.Windows.Forms.Label ticketSearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblFormTitle;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Label lblTotalTickets;
+        private MyToolTip myToolTip1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DataGridView dvgUsers;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblUserTitle;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

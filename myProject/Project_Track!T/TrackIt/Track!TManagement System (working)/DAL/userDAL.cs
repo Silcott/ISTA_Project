@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackITManagementSystem.BLL;
+using TrackITManagementSystem.UI;
 
 namespace TrackITManagementSystem.DAL
 {
     class userDAL
     {
+        loginBLL l = new loginBLL();
+
         //Create a Static String to Connect Database 
         static string myconnstring = ConfigurationManager.ConnectionStrings["connstring"].ConnectionString;
         //this will add our database to config manager
@@ -63,6 +62,68 @@ namespace TrackITManagementSystem.DAL
         }
 
         #endregion //must have a end
+        #region Find Users with same Username
+
+        private static bool isUsernameFound;
+        public bool FindUsername(string columnName, string usernameToCompare)
+        {
+            //Create SQL Connection for database cooncetion
+            SqlConnection conn = new SqlConnection(myconnstring);
+
+            //Create a int variable to count username and set its default value to 0
+            int numberOfUsers = 0; 
+            
+            try
+            {
+                //SQL Query to count tickets foir specific issue category
+                string sql = $"SELECT username FROM tbl_users WHERE {columnName} ='" + usernameToCompare + "'";
+
+                //SQL Command to Execute
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Sql Data Adapter to get teh  data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Datatable to hold the data temporarily
+                DataTable dt = new DataTable();
+
+                //Pass the value from SqlDataAdapter to DataTable
+                adapter.Fill(dt);
+
+                //Get the total numbers of tickets based on issue category
+                numberOfUsers = dt.Rows.Count;
+
+                //Check if the dt has a row, if it equals ONE it has a row and shows a username having the same name, return true 
+                if (numberOfUsers == 1)
+                {
+                    isUsernameFound = true;
+                }
+                else
+                {
+                    isUsernameFound = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                //Display any exceptional errors
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //CLose Database Connection
+                conn.Close();
+            }
+            if (isUsernameFound == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
 
         #region INSERT data into Database for (User Module)
         public bool Insert(userBLL u)
@@ -76,9 +137,9 @@ namespace TrackITManagementSystem.DAL
             try
             {
                 //Create a String Variable to Store the INSERT Query
-                String sql = "INSERT INTO tbl_users(username, email, password, full_name, phone, address, added_date, image_name) " +
+                String sql = "INSERT INTO tbl_users(username, email, password, full_name, phone, address, added_date, security_level, image_name) " +
                     "VALUES " +
-                    "(@username, @email, @password, @full_name, @phone, @address, @added_date, @image_name)";
+                    "(@username, @email, @password, @full_name, @phone, @address, @added_date, @security_level, @image_name)";
 
                 //Create a SQL Command to pass the value in our Query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -86,12 +147,13 @@ namespace TrackITManagementSystem.DAL
                 //Create the Parameter to pass get the value from UI and pass it on SQL Query above
                 cmd.Parameters.AddWithValue("@username", u.username);
                 cmd.Parameters.AddWithValue("@email", u.email);
-                cmd.Parameters.AddWithValue("@password", u.password);
+                cmd.Parameters.AddWithValue("@password", HashPassword.CalculateSHA256(u.password));
                 cmd.Parameters.AddWithValue("@full_name", u.full_name);
                 cmd.Parameters.AddWithValue("@phone", u.phone);
                 cmd.Parameters.AddWithValue("@address", u.address);
                 cmd.Parameters.AddWithValue("@added_date", u.added_date);
                 cmd.Parameters.AddWithValue("@image_name", u.image_name);
+                cmd.Parameters.AddWithValue("@security_level", u.security_level);
 
                 //Open Database Connection
                 conn.Open();
@@ -141,7 +203,7 @@ namespace TrackITManagementSystem.DAL
             {
                 //Create a string variable to hold the sql query
                 string sql = "UPDATE tbl_users SET username=@username, email=@email, password=@password, full_name=@full_name, phone=@phone, " +
-                    "address=@address, added_date=@added_date, image_name=@image_name WHERE user_id=@user_id";
+                    "address=@address, added_date=@added_date, security_level=@security_level, image_name=@image_name WHERE user_id=@user_id";
 
                 //Create Sql Command to execute query and pass the values to sql query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -156,7 +218,8 @@ namespace TrackITManagementSystem.DAL
                 cmd.Parameters.AddWithValue("@added_date", u.added_date);
                 cmd.Parameters.AddWithValue("@image_name", u.image_name);
                 cmd.Parameters.AddWithValue("@user_id", u.user_id);
-
+                cmd.Parameters.AddWithValue("@security_level", u.security_level);
+                
                 //Open Database Connection
                 conn.Open();
 
@@ -206,7 +269,7 @@ namespace TrackITManagementSystem.DAL
             try
             {
                 //Create a string variable to hold the sql query to delete data
-                String sql = "Delete FROM tbl_users WHERE user_id=user_id";
+                String sql = "Delete FROM tbl_users WHERE user_id=@user_id";
 
                 //Create Sql Command to Execute the Query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -264,7 +327,7 @@ namespace TrackITManagementSystem.DAL
             try
             {
                 //Write the SQL Query to serach the user from Database
-                String sql = "SELECT * FROM tbl_users WHERE user_id LIKE '%" + keywords + "%' OR full_name LIKE '%" + keywords + "%' OR address LIKE '%" + keywords + "%'";
+                String sql = "SELECT * FROM tbl_users WHERE user_id LIKE '%" + keywords + "%' OR full_name LIKE '%" + keywords + "%' OR address LIKE '%" + keywords + "%' OR username LIKE '%" + keywords + "%'";
 
                 //Create SQL Command to Execute the Query
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -292,5 +355,50 @@ namespace TrackITManagementSystem.DAL
         }
         #endregion
 
+        #region Get User ID from Username
+
+        public userBLL GetIDFromUsername(string username)
+        {
+            userBLL u = new userBLL();
+
+            //Create SQL Connection to connect database
+            SqlConnection conn = new SqlConnection(myconnstring);
+
+            //DataTable to hold the data from database temporarily
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //SQL Query to get the id from username
+                string sql = "SELECT full_name FROM tbl_users WHERE username='" + username + "'";
+
+                //Create SQL Data Adapter
+                SqlDataAdapter adapter =new SqlDataAdapter(sql, conn);
+
+                //Open Database Connection
+                conn.Open();
+
+                //Fill the data in the dataatbale from Adapter
+                adapter.Fill(dt);
+
+                //If there's user based on the username then get the full_name
+                if (dt.Rows.Count>0)
+                {
+                    u.full_name = dt.Rows[0]["full_name"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                //Display exceptional errord
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //Close Database Connection
+                conn.Close();
+            }
+            return u;
+        }
+        #endregion
     }
 }

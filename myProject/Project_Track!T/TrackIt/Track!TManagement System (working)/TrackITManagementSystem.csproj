@@ -48,10 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\loginBLL.cs" />
     <Compile Include="BLL\requestersBLL.cs" />
     <Compile Include="BLL\userBLL.cs" />
+    <Compile Include="DAL\DGVPrinter.cs" />
+    <Compile Include="DAL\loginDAL.cs" />
     <Compile Include="DAL\requesterDAL.cs" />
     <Compile Include="DAL\userDAL.cs" />
+    <Compile Include="HashPassword.cs" />
+    <Compile Include="MyToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyToolTip.Designer.cs">
+      <DependentUpon>MyToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,11 +76,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\frmRequesters.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\frmRequesters.Designer.cs">
       <DependentUpon>frmRequesters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSplash.Designer.cs">
+      <DependentUpon>frmSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\frmUsers.cs">
       <SubType>Form</SubType>
@@ -72,6 +100,9 @@
     <Compile Include="UI\frmUsers.Designer.cs">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmHome.resx">
       <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,8 +115,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\frmRequesters.resx">
       <DependentUpon>frmRequesters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSplash.resx">
+      <DependentUpon>frmSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
@@ -104,6 +141,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="files\" />
     <Folder Include="images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

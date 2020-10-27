@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using TrackITManagementSystem.BLL;
 using TrackITManagementSystem.DAL;
@@ -24,113 +22,137 @@ namespace TrackITManagementSystem.UI
         userBLL u = new userBLL();
         userDAL dal = new userDAL();
 
+        //Global variable to store no image name for picturebox
         string imageName = "no-image.png";
 
-        private void lblPhone_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //When User clicks on back button, close current form and open Home form
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //Add funtionality to close this form
-            this.Hide();
+            //Add functionality to close this form
+            Close();
+
+            //Open Home Form
+            frmHome home = new frmHome();
+            home.Show();
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        #region SELECT data from database (User Module)
+        //what ever is written is shown when collapsed
+        // the above region allows the developer to collapse/uncollapsed everything
+        // within it, as long as their IDE supports regions
+        //Create a Static String to Connect Database 
+        static string myconnstring = ConfigurationManager.ConnectionStrings["connstring"].ConnectionString;
+        public static DataTable SelectCurrentUser(string selectionName) //create a Select method 
         {
-            //Step 1: Get the values from UI form
-            u.full_name = txtFullName.Text;
-            u.email = txtEmail.Text;
-            u.username = txtUserName.Text;
-            u.password = txtPassword.Text;
-            u.phone = txtPhone.Text;
-            u.address = txtAddress.Text;
-            u.added_date = DateTime.Now;
-            u.image_name = imageName;
+            //Create an Object to connect database
+            SqlConnection conn = new SqlConnection(myconnstring);
 
-            //Step 2: Adding the values from the UI to the Database
-            //Create a boolean variable to check whether the data is inserted successfully or not
-            bool success = dal.Insert(u);
+            //create a DataTable to hold the Data from Database
+            DataTable dt = new DataTable();
 
-            //Step 3: Check whether the data is inserted successfully or not
-            if (success == true)
+            try//A try block identifies a block of code for which particular exceptions is activated. It is followed by one or more catch blocks.
             {
-                //Data or User Added Successsfully
-                MessageBox.Show("New User added Successfully.");
+                //Write SQL Query to Get Data from Database
+                String sql = $"SELECT {selectionName} FROM tbl_users WHERE username = '{frmLogin.loggedInUser}' and password = '{frmLogin.loggedInPassword}'";
+                //Create SQL Command to Execute Query
+                SqlCommand cmd = new SqlCommand(sql, conn);
 
-                //Display the user in DataGrid View
-                DataTable dt = dal.Select();
-                dvgUsers.DataSource = dt;
+                //Create Sql Data Adapter to hold the data from database temporarily
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
 
-                //Clear Text Boxes
-                Clear();
+                //Open Database Connection
+                conn.Open();
+
+                //Transfer Data from SqlData Adapter to DataTable
+                adapter.Fill(dt);
             }
-            else
+            catch (Exception ex)//A program catches an exception with an exception handler at the place in a program where you want to handle the 
+            //problem. The catch keyword indicates the catching of an exception.
             {
-                //Failed to Add User
-                MessageBox.Show("Failed to Add New User.");
+                //Display Error Message if there's any exceptional errors
+                MessageBox.Show(ex.Message);
             }
+            finally//The finally block is used to execute a given set of statements, whether an exception is thrown or not thrown. For example, 
+            //if you open a file, it must be closed whether an exception is raised or not
+            {
+                //Close Database Connection
+                conn.Close();
+            }
+            return dt;
         }
-
-        //Method of Function to Clear Text Boxes
-        public void Clear()
+        #endregion //must have a end
+        #region LOAD form Functions
+        private void frmUsers_Load(object sender, EventArgs e)
         {
-            txtFullName.Text = "";
-            txtEmail.Text = "";
-            txtUserName.Text = "";
-            txtPhone.Text = "";
-            txtPassword.Text = "";
-            txtAddress.Text = "";
-            txtUserID.Text = "";
-            //Path to Destination Folder for no image
-            //Get the path of the image
-            string paths = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
-            string imagePath = paths + "\\images\\no-image.png";
-            //Display in Picture Box
-            pictureBoxProfilePicture.Image = new Bitmap(imagePath);
-        }
+            //If admin, make textboxes readonly
+            if (frmLogin.loggedInUser.ToUpper() == "ADMIN")
+            {
+                txtUserName.ReadOnly = true;
+                txtPassword.ReadOnly = true;
+            }
 
-        private void dvgUsers_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            //Find the Row Index of the Row Clicked on Users Data Grid View
-            int RowIndex = e.RowIndex;
-            txtUserID.Text = dvgUsers.Rows[RowIndex].Cells[0].Value.ToString();
-            txtUserName.Text = dvgUsers.Rows[RowIndex].Cells[1].Value.ToString();
-            txtEmail.Text = dvgUsers.Rows[RowIndex].Cells[2].Value.ToString();
-            txtPassword.Text = dvgUsers.Rows[RowIndex].Cells[3].Value.ToString();
-            txtFullName.Text = dvgUsers.Rows[RowIndex].Cells[4].Value.ToString();
-            txtPhone.Text = dvgUsers.Rows[RowIndex].Cells[5].Value.ToString();
-            txtAddress.Text = dvgUsers.Rows[RowIndex].Cells[6].Value.ToString();
-            imageName = dvgUsers.Rows[RowIndex].Cells[8].Value.ToString();
+            //Display the Username of the logged In user
+            lblUser.Text = frmLogin.loggedInUser.ToUpper();
+
+            //Display ONLY Tickets that are for the Logged In User
+            //Username
+            DataTable dt = SelectCurrentUser("username");
+            foreach (DataRow row in dt.Rows)
+                txtUserName.Text = row[0].ToString();
+            //User_ID
+            dt = SelectCurrentUser("user_id");
+            foreach (DataRow row in dt.Rows)
+                txtUserID.Text = row[0].ToString();
+            //Email
+            dt = SelectCurrentUser("email");
+            foreach (DataRow row in dt.Rows)
+                txtEmail.Text = row[0].ToString();
+            //Password
+            dt = SelectCurrentUser("password");
+            foreach (DataRow row in dt.Rows)
+                txtPassword.Text = row[0].ToString();
+            //Phone
+            dt = SelectCurrentUser("phone");
+            foreach (DataRow row in dt.Rows)
+                txtPhone.Text = row[0].ToString();
+            //Full Name
+            dt = SelectCurrentUser("full_name");
+            foreach (DataRow row in dt.Rows)
+                txtFullName.Text = row[0].ToString();
+            //Address
+            dt = SelectCurrentUser("address");
+            foreach (DataRow row in dt.Rows)
+                txtAddress.Text = row[0].ToString();
+            //Image File Name
+            dt = SelectCurrentUser("image_name");
+            foreach (DataRow row in dt.Rows)
+                imageName = row[0].ToString();
+            //Security Level
+            dt = SelectCurrentUser("security_level");
+            foreach (DataRow row in dt.Rows)
+                txtSecurityLevel.Text = row[0].ToString();
 
             //Display the Image of the selected User
             //Get the path of the image
             string paths = Application.StartupPath.Substring(0, (Application.StartupPath.Length - 10));
 
-            if (imageName != "no-image.png")
-            {
-                //Path to Destination Folder, if there is a selected image
-                string imagePath = paths + "\\images\\" + imageName;
-                //Display in Picture Box
-                pictureBoxProfilePicture.Image = new Bitmap(imagePath);
-            }
-            else
+            if (imageName == "no-image.png")
             {
                 //Path to Destination Folder for no image
                 string imagePath = paths + "\\images\\no-image.png";
                 //Display in Picture Box
                 pictureBoxProfilePicture.Image = new Bitmap(imagePath);
             }
+            else
+            {
+                //Path to Destination Folder, if there is a selected image
+                string imagePath = paths + "\\images\\" + imageName;
+                //Display in Picture Box
+                pictureBoxProfilePicture.Image = new Bitmap(imagePath);
+            }
         }
-
-        private void frmUsers_Load(object sender, EventArgs e)
-        {
-            //Display the Users in Data Grid View when the form is loaded
-            DataTable dt = dal.Select();
-            dvgUsers.DataSource = dt;
-        }
-
+        #endregion
+        #region UPDATE Button
+        //Update Button Method When Clicked
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //Step 1: Get the values from UI
@@ -143,58 +165,21 @@ namespace TrackITManagementSystem.UI
             u.address = txtAddress.Text;
             u.added_date = DateTime.Now;
             u.image_name = imageName;
+            u.security_level = txtSecurityLevel.Text;
 
             //Step 2: Create a Boolean variable to check whether the data is updated successfully ot not
             bool success = dal.Update(u);
 
-            //Let's check whether the data is updated or not
+            //Check whether the data is updated or not
             if (success == true)
             {
                 //Data Updated Successfully
                 MessageBox.Show("User Updated Successfully.");
-
-                //Refresh Data Grid View
-                DataTable dt = dal.Select();
-                dvgUsers.DataSource = dt;
-
-                //Clear the Text Boxes
-                Clear();
-
-            }
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            //Step 1: Get ehe UsersId from the Text Box to Delete teh User
-            u.user_id = int.Parse(txtUserID.Text);
-
-            //Step 2: Create Boolean value to check whether the user deleted or not
-            bool success = dal.Delete(u);
-
-            //Check whether the user is Deleted or Not
-            if (success == true)
-            {
-                //User Deleted Successfully
-                MessageBox.Show("User Deleted Successfully.");
-
-                //Refresh Data Grid View
-                DataTable dt = dal.Select();
-                dvgUsers.DataSource = dt;
-
-                //Clear the Text Boxes
-                Clear();
             }
         }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            //Call the user function
-            Clear();
-        }
-
-
-
+        #endregion
+        #region SELECT Image Button
+        //Select Image Button Method When Clicked
         private void btnSelectImage_Click_1(object sender, EventArgs e)
         {
             //Write the code to upload image of user
@@ -202,7 +187,7 @@ namespace TrackITManagementSystem.UI
             OpenFileDialog open = new OpenFileDialog();
 
             //Filter the file type to only allow image file types
-            open.Filter = "Image Files *.jpeg; *.jpg; *.png; *.PNG; *.gif;)|*.jpeg; *.jpg; *.png; *.PNG; *.gif;";
+            open.Filter = "Image Files *.jpeg; *.jpg; *.png; *.PNG; *.gif;)|*.jpeg; *.jpg; *.png; *.PNG;";
 
             //Check if the file is selected or not
             if(open.ShowDialog() == DialogResult.OK)
@@ -237,38 +222,37 @@ namespace TrackITManagementSystem.UI
 
                     //7. Display Message
                     MessageBox.Show("Image Successfully Uploaded.");
-
                 }
             }
         }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        #endregion
+        #region METHOD to move form around screen
+        //Method to move the windows around on screen with drag function
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd,
+            int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+        //If User Presses the Mouse Button on the Form
+        private void frmUsers_MouseDown(object sender, MouseEventArgs e)
         {
-            //Write the code to get users based on keywords
-            //1. Get teh keywords form the TextBox
-            String keywords = txtSearch.Text;
-
-            //Check whether the textbox is empty ot not
-            if (keywords != null)
+            if (e.Button == MouseButtons.Left)
             {
-                //TextBox is not empty, display users on Data Grid View based on the ketywords
-                DataTable dt = dal.Search(keywords);
-                dvgUsers.DataSource = dt;
-
-            }
-            else
-            {
-                //TextBox is empty and display all the users on the Data Grid View
-                DataTable dt = dal.Select();
-                dvgUsers.DataSource = dt;
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
-        private void dvgUsers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //If User Presses the Mouse Button on the Forms Top Panel
+        private void panelTop_MouseDown(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
         }
-
-        
+        #endregion
     }
 }

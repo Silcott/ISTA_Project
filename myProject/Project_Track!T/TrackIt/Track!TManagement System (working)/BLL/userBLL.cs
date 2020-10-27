@@ -17,5 +17,6 @@ namespace TrackITManagementSystem.BLL
         public string address { get; set; }
         public DateTime added_date { get; set; }
         public string image_name { get; set; }
+        public string security_level { get; set; }
     }
 }

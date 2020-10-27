@@ -68,9 +68,11 @@ namespace TrackITManagementSystem.DAL
                 string sql =
                     "INSERT INTO tbl_requesters (" +
                     "first_name, " +
-                    "last_name, email, " +
+                    "last_name, " +
+                    "email, " +
                     "ticket_creator_name, " +
-                    "phone, location, " +
+                    "phone, " +
+                    "location, " +
                     "issue_category, " +
                     "priority_level, " +
                     "issue_description, " +
@@ -170,7 +172,7 @@ namespace TrackITManagementSystem.DAL
                     "completed_date=@completed_date, " +
                     "cost=@cost, " +
                     "file_name_path=@file_name_path " +
-                    "by WHERE ticket_id=@ticket_id";
+                    "WHERE ticket_id=@ticket_id";
 
                 //Create SQL Command 
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -272,6 +274,140 @@ namespace TrackITManagementSystem.DAL
 
             return isSuccess;
         }
-#endregion
+        #endregion
+        #region Count Tickets by Issue Category & Priority
+
+        public string countTickets(string columnName, string fields)
+        {
+            //Create SQL Connection for database cooncetion
+            SqlConnection conn = new SqlConnection(myconnstring);
+
+            //Create a astring variable for ticket count and set its default value to 0
+            string tickets = "0";
+
+            try
+            {
+                //SQL Query to count tickets foir specific issue category
+                string sql = $"SELECT * FROM tbl_requesters WHERE {columnName} ='"+ fields +"'";
+
+                //SQL Command to Execute
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Sql Data Adapter to get teh  data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Datatable to hold the data temporarily
+                DataTable dt = new DataTable();
+
+                //Pass the value from SqlDataAdapter to DataTable
+                adapter.Fill(dt);
+
+                //Get the total numbers of tickets based on issue category
+                tickets = dt.Rows.Count.ToString();
+            }
+            catch (Exception ex)
+            {
+                //Display any exceptional errors
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //CLose Database Connection
+                conn.Close();
+            }
+
+            return tickets;
+        }
+
+        #endregion
+        #region Load Username Ticket on Home Screen
+
+        public DataTable LoadUserNameTickets(string fields)
+        {
+            //Create SQL Connection for database cooncetion
+            SqlConnection conn = new SqlConnection(myconnstring);
+         
+            //Create object of DataTable to hold the data from the database and return it
+            DataTable dt = new DataTable();
+            try
+            {
+                //SQL Query to count tickets foir specific issue category
+                string sql = "SELECT ticket_id, first_name, last_name, email, phone, location, issue_category, priority_level, added_date, cost FROM tbl_requesters WHERE ticket_creator_name = '"+ fields +"'";
+
+                //SQL Command to Execute
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //Sql Data Adapter to get teh  data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Pass the value from SqlDataAdapter to DataTable
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                //Display any exceptional errors
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //CLose Database Connection
+                conn.Close();
+            }
+            return dt;
+        }
+        #endregion
+        #region Method to Search Tickets
+        public DataTable Search(string keywords)
+        {
+            //SQL Connection to Connect Database
+            SqlConnection conn = new SqlConnection(myconnstring);
+
+            //Create DataTable to hold the data temporarily
+            DataTable dt = new DataTable();
+
+            try
+            {
+                //Code to search tickets based on keywords typed in textbox
+                //SQL Query to Search Tickets
+                string sql = "SELECT * FROM tbl_requesters WHERE ticket_id LIKE '%" + keywords +
+                             "%' OR first_name LIKE '%" + keywords +
+                             "%' OR last_name LIKE '%" + keywords +
+                             "%' OR email LIKE '%" + keywords +
+                             "%' OR ticket_creator_name LIKE '%" + keywords +
+                             "%' OR phone LIKE '%" + keywords +
+                             "%' OR location LIKE '%" + keywords +
+                             "%' OR issue_category LIKE '%" + keywords +
+                             "%' OR added_date LIKE '%" + keywords +
+                             "%' OR completed_date LIKE '%" + keywords +
+                             "%' OR cost LIKE '%" + keywords +
+                             "%' OR file_name_path LIKE '%" + keywords + "' ";
+
+                //SQL Command to execute the query
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                //SQLDataAdapter to save the data from database
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+
+                //Open Database Connection
+                conn.Open();
+
+                //Transfer the data from sql data adapter to datatable
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                //Display exceptional errors
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                //CLose the Database Connection
+                conn.Close();
+            }
+
+            return dt;
+        }
+
+        #endregion
     }
 }

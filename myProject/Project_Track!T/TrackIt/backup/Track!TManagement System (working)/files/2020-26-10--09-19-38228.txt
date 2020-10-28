@@ -1,0 +1,59 @@
+Add Repo to Github
+git init //starts the intital 
+git remote add origin git@github.com:Silcott/Silcott.github.io.git
+git add .
+git commit -am 'commit' 	***This Git commit example shows how you set the description with the commit function: git commit -m "<message>" The following example shows how to save a snapshot of changes done in the whole working directory. This code only works for tracked files. git commit -a
+git push -u origin master  	***The -u option does the following: For every branch that is up to date or successfully pushed, add upstream (tracking) reference, used by argument-less git-pull and other commands. So, after pushing your local branch with -u option, this local branch will be automatically linked with remote branch, and you can use git pull without any arguments.
+pword - normal
+
+
+
+Repos on Github
+git@github.com:Silcott/Silcott.git
+git@github.com:Silcott/PORTFOLIO-OF-PROJECTS.git
+git@github.com:Silcott/ISTA_Project.git
+git@github.com:Silcott/ISTA_420_SQL.git
+git@github.com:Silcott/ISTA_220_C_Sharp.git
+git@github.com:Silcott/ISTA_322_ASP.git
+git@github.com:Silcott/ISTA_421_CSharp_Continuation.git
+
+
+git config
+git init
+git add
+git status
+git commit
+git log (press q to exit log)
+git remote add
+git remote -v
+git push
+git diff
+git diff --staged
+
+
+
+move stats.doc, morestats.doc c:\statistics
+
+
+Common Commands:
+
+~ Indicates the home directory
+pwd Print working directory (pwd) displays the path name of the current directory
+cd Change Directory
+mkdir Make a new directory / file folder
+touch Make a new file
+.. Go up one level / directory
+cd ~ Return to home directory
+cls or clear Clears information on the display screen to provide a blank slate
+ls List provides a list of all files with a directory
+ls -l Displays a long list vertically with file permissions, date modified and file name
+ls -la Displays all files
+
+Ctrl+l, which clears the screen
+Ctrl+r which searches through the command history for recently used commands.
+
+
+
+Input this into the windows termial to find the size of dir in bytes
+powershell -noprofile -command "ls -r|measure -sum Length"
+
